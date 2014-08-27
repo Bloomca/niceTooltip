@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html><head lang="en">
+<html>
+<head lang="en">
     <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="js/nicetooltip.js"></script>
@@ -18,12 +19,37 @@
         <p class="lead">Welcome! This small $ plugin was developed as simple and elegant way to add tooltips to your text.</p>
         <p>You can have one instance of tooltip – well, too much isn't that good, huh? This is absolutely simple solution – in most, you manage position and HTML of tooltip (but anyway, that's enough).</p>
         <h3>Mobile-friendly</h3>
-        <p>This tooltips work like charms at your mobile devices – they work on click on $elem to reveal and anywhere to disappear.</p>
+        <p>This tooltips work like charms at your mobile devices – they work on click on $elem to reveal and anywhere else to disappear.</p>
         <h3>Settings</h3>
         <p>Mostly, you need only one thing – override default css. You can do it by changing $.fn.niceTooltip.defaults.css.</p>
         <p>Here list of default css goes:</p>
+        <pre class="prettyprint linenums" id="code_e1"></pre>
     </div>
     <div id="footer">
 
     </div>
 </div>
+<script>
+    $(function(){
+        var css = {
+            position: "absolute",
+            "z-index": 9999,
+            padding: "10px 20px",
+            border: "1px solid #b3c9ce",
+            "border-radius": "4px",
+            "text-align": "center",
+            font: "14px/1.3 arial, sans-serif",
+            color: "#333",
+            background: "#fff",
+            "box-shadow": "3px 3px 3px rgba(0,0,0,.3)"
+        };
+        var html = '<ol class="linenums">';
+        Object.keys(css).forEach(function(e){
+            html += '<li><span class="atv">' + e + ':</span><span class="lit">' + css[e] + '</span>;</li>';
+        });
+
+        $('#code_e1').html(html);
+    });
+</script>
+</body>
+</html>

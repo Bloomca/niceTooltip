@@ -2,33 +2,45 @@
     var ctr = 0;
     $.fn.niceTooltip = function (options) {
         var transition = options.time || 300;
+        if (!options.position) position = {left:"right",top:"top"};
+        else {
+            var position = {
+                
+            }
+        }
         // we have only 1 instance of tooltip
         var $b = $('body'),
             $tp = $b.find('>div#nice-tooltip-instance');
         if (!$tp.length) $tp = $('<div id="nice-tooltip-instance"></div>').appendTo('body').css($.fn.niceTooltip.defaults.css);
 
-        // TODO wrap with span
-//        .css({
-//            borderBottom: "1px dotted black",
-//            cursor: "help"
-//        })
+        if (this.prop('tagName')==="SPAN") this.css({
+            borderBottom: "1px dotted black",
+            cursor: "help"
+        });
+
+        var touchSupport = "ontouchstart" in document.documentElement,
+            ios = /(iPad|iPhone|iPod)/g.test(navigator.userAgent),
+            android = (navigator.userAgent.toLowerCase().indexOf("android") > -1);
 
         this.data({
-                'nice-tooltip-content': options.HTML,
-                'nice-tooltip-id': ctr++
-            })
-            .on('mouseenter', function (e) {
+            'nice-tooltip-content': options.HTML,
+            'nice-tooltip-id': ctr++
+        });
+
+        if (!touchSupport && !ios && !android) {
+            this.on('mouseenter', function (e) {
                 var $el = $(this),
                     tpId = $tp.data('id'),
                     thId = $el.data('nice-tooltip-id');
                 if (!(tpId === thId)) $tp.data('id',thId).html($el.data('nice-tooltip-content'));
-                $tp.stop().animate({
-                    opacity:1
-                },transition);
+                $tp.stop().animate({opacity:1},transition);
             })
-            .on('mouseleave', function (e) {
-                $tp.stop().animate({opacity:0},transition);
-            });
+                .on('mouseleave', function (e) {
+                    $tp.stop().animate({opacity:0},transition);
+                });
+        } else {
+            // just appear & disappear
+        }
 
         if ($.fn.niceTooltip.defaults.move) {
             var shift = +new Date;
@@ -68,6 +80,12 @@
                 e.pageY = e.clientY + (html.scrollTop || body && body.scrollTop || 0);
                 e.pageY -= html.clientTop || 0;
             }
+        }
+
+        function setPosition (aw, ah, w, h, coords) {
+            var obj = {};
+
+            return obj;
         }
 
     };
