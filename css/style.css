@@ -1,13 +1,15 @@
-body: {
+body {
     margin:0,
     padding: 0;
+    background-image: url(http://subtlepatterns.com/patterns/light_grey.png);
 }
 
 #content {
     margin: 0 auto;
     width: 1100px;
-    background: none repeat scroll 0% 0% #FFF;
+    background: #FFF;
     padding: 50px;
+    box-shadow:0px 0px 15px rgba(0, 0, 0, 0.1);
 }
 
 .title-sub {

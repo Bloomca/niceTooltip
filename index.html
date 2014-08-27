@@ -9,6 +9,7 @@
     <title></title>
 </head>
 <body>
+<img src="i/logo.png">
 <div id="content">
     <div id="header">
 
@@ -16,7 +17,7 @@
     <div id="main-content">
         <h1>Nice Toopltip</h1>
         <div class="title-sub">lightweight jQuery plugin</div>
-        <p class="lead">Welcome! This small $ plugin was developed as simple and elegant way to add tooltips to your text.</p>
+        <p class="lead">Welcome! This small $ plugin was developed as simple and elegant way to add <span id="first-tooltip">tooltips</span> to your text.</p>
         <p>You can have one instance of tooltip – well, too much isn't that good, huh? This is absolutely simple solution – in most, you manage position and HTML of tooltip (but anyway, that's enough).</p>
         <h3>Mobile-friendly</h3>
         <p>This tooltips work like charms at your mobile devices – they work on click on $elem to reveal and anywhere else to disappear.</p>
@@ -37,10 +38,10 @@
             padding: "10px 20px",
             border: "1px solid #b3c9ce",
             "border-radius": "4px",
-            "text-align": "center",
             font: "14px/1.3 arial, sans-serif",
             color: "#333",
             background: "#fff",
+            maxWidth: "250px",
             "box-shadow": "3px 3px 3px rgba(0,0,0,.3)"
         };
         var html = '<ol class="linenums">';
@@ -49,6 +50,7 @@
         });
 
         $('#code_e1').html(html);
+        $('#first-tooltip').niceTooltip({HTML:"Just like this one."});
     });
 </script>
 </body>

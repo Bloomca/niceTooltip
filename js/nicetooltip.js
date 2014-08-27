@@ -5,7 +5,7 @@
         if (!options.position) position = {left:"right",top:"top"};
         else {
             var position = {
-                
+
             }
         }
         // we have only 1 instance of tooltip
@@ -97,9 +97,9 @@
             padding: "10px 20px",
             border: "1px solid #b3c9ce",
             borderRadius: "4px",
-            textAlign: "center",
             font: "14px/1.3 arial, sans-serif",
             color: "#333",
+            maxWidth: "250px",
             background: "#fff",
             boxShadow: "3px 3px 3px rgba(0,0,0,.3)",
             opacity: 0
