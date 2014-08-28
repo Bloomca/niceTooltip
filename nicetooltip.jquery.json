@@ -1,0 +1,34 @@
+{
+    "name": "niceTooltip",
+    "version": "0.2.0",
+    "title": "jQuery.nicetooltip",
+    "description": "simple jQuery plugin for tooltips.",
+    "keywords": [
+        "ui", "tooltip"
+    ],
+    "author": {
+        "name": "Bloomca",
+        "url": "https://github.com/Bloomca"
+    },
+    "maintainers": [
+        {
+            "name": "Bloomca",
+            "email": "seva.zaikov@gmail.com"
+        }
+    ],
+    "licenses": [
+        {
+            "type":"GPLv3",
+            "url":"http://www.gnu.org/copyleft/gpl.html"
+        }
+    ],
+    "bugs": "https://github.com/Bloomca/niceTooltip/issues",
+    "homepage": "http://bloomca.github.io/niceTooltip/",
+    "docs": "http://bloomca.github.io/niceTooltip/",
+    "demo": "http://bloomca.github.io/niceTooltip/",
+    "download": "https://github.com/Bloomca/niceTooltip/",
+    "dependencies": {
+        "jquery": ">=1.11.0",
+        "sugarjs": "~1.4.0"
+    }
+}
