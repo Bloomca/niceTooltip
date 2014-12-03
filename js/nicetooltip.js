@@ -28,7 +28,7 @@
 
 
     $.fn.niceTooltip = function (options) {
-        var opts = $.extend({}, options, defaults),
+        var opts = $.extend({}, defaults, options),
             $b = $('body'),
             $tp = $b.find('#nice-tooltip-instance');
 
